@@ -5,6 +5,8 @@ platform :ios, '10.0'
 
 target 'TisApp' do
   config = use_native_modules!
+  
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   use_react_native!(
     :path => config[:reactNativePath],
@@ -12,11 +14,6 @@ target 'TisApp' do
     :hermes_enabled => false
   )
 
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
-
-  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-async-storage/async-storage'
-
-  pod 'react-native-webview', :path => '../node_modules/react-native-webview'
 
   target 'TisAppTests' do
     inherit! :complete
