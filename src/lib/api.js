@@ -10,6 +10,21 @@ exports.verifyLogin = async (user, pass) => {
   return data;
 }
 
+// Create the pdf on Remote Server to avoid missing data
+exports.byPassPdfCreation = async (lid) => {
+  let endpoint = "http://108.61.75.144/x-pek/tis/system/functions/api/mobile/createCertPdf.php?lid=" + lid;
+  let data = HTTP.GETV2(`${endpoint}`);
+  return data;
+}
+
+// Get the pdf in the Remote Server and overwrite to avoid missing data
+exports.byPassPdf = async (lid) => {
+  let endpoint = `byPassPdf.php`;
+  let urlParams = `?lid=${lid}`
+  let data = HTTP.GET(`${endpoint}${urlParams}`);
+  return data;
+}
+
 exports.clientData = async (client_id) => {
   let endpoint = `clientData.php`;
 

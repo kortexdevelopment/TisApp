@@ -47,7 +47,7 @@ export default function LogIn(props){
 
         if(loginResult === undefined){
             //show modal errir app
-            alert("Ups.. \nThere is problem with out cloud, try again later.");
+            alert("Ups.. \nThere is problem with our cloud, try again later.");
             setSearchComplete(true);
             return;
         }

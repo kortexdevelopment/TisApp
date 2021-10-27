@@ -92,7 +92,9 @@ export default function CertificatesNew(props){
 
         try
         {
-            var pdf = await API.createCertPdf(pid);
+            var pdfCreation = await API.byPassPdfCreation(pid);
+            if(pdfCreation)
+                var pdf = await API.byPassPdf(pid);
         }catch(e)
         {
             pdf = undefined;
