@@ -195,6 +195,16 @@ export default function CertificatesHistory(props){
             return;
         }
 
+        var tmpArray = [];
+        for(var x = 0; x < Object.keys(crts.certificates).length; x++)
+        {
+            if(crts.certificates[x][5] == session.user_id)
+            {
+                tmpArray.push(crts.certificates[x]); 
+            }
+        }
+        crts.certificates = tmpArray;
+
         setCertificates(crts.certificates);
         setSearchCrt(crts.certificates);
         isLoading(false);

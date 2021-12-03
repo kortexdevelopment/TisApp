@@ -74,7 +74,7 @@ export default function CertificatesNew(props){
 
         try
         {
-            var loggin = await API.createCertLog(cid);
+            var loggin = await API.createCertLog(cid, session.user_id);
         }catch(e)
         {
             loggin = undefined;

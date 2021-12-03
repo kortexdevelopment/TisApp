@@ -75,10 +75,10 @@ exports.deleteCompany = async (cid) => {
   return data;
 }
 
-exports.createCertLog = async (cid) => {
+exports.createCertLog = async (cid, uid) => {
   let endpoint = `createCertLog.php`;
 
-  let urlParams = `?cid=${cid}`
+  let urlParams = `?cid=${cid}&uid=${uid}`
 
   let data = HTTP.GET(`${endpoint}${urlParams}`);
 
